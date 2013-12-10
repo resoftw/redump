@@ -1,4 +1,4 @@
-function redump(thevar)
+function redump(thevar,origname)
 {
 	var dump=function(n,v)
 	{
@@ -53,6 +53,7 @@ function redump(thevar)
 				break;
 		}
 		return r;
-	}
-	return dump('',thevar);
+	};
+	(typeof origname !== 'undefined')||(origname='');
+	return '<ul style="list-style:none"><li>'+dump(origname,thevar)+'</li></ul>';
 }
